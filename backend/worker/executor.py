@@ -79,7 +79,7 @@ def _run_map(spec: dict, data_root: str, progress_cb: ProgressCallback) -> dict:
     return {
         "records_processed": processed,
         "records_emitted": emitted,
-        "partition_sizes": {k: v // 1024 for k, v in store.partition_sizes(job_id, task_id).items()},
+        "partition_sizes": store.partition_sizes(job_id, task_id),
     }
 
 

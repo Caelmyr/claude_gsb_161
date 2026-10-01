@@ -278,7 +278,7 @@ class Scheduler:
             t.finished_ms = now_ms()
             t.error = ""
             stats = dict(t.stats or {})
-            stats["partition_size_entries"] = payload.get("partition_sizes", {})
+            stats["partition_sizes"] = payload.get("partition_sizes", {})
             stats["results"] = payload.get("results", [])
             stats["winning_worker"] = worker_id
             t.stats = stats
